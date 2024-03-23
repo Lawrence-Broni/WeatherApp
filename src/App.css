@@ -1,0 +1,598 @@
+/* This is used in the font size buttons used in the setting page */
+:root {
+  --h1-font-size: 2em;
+  --h2-font-size: 1.9em;
+  --h3-font-size: 1.7em;
+  --h4-font-size: 1.7em;
+  --p-font-size: 1.7em;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+/* Also colours all of the p tags pink */
+p {
+  font-size: var(--p-font-size);
+  color: #FDD8FE;
+}
+
+/* Makes sure all the p text starts with a capital letter */
+p::first-letter {
+  text-transform:capitalize;
+}
+
+/* imports the text we want */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap');
+
+
+/* Styles the body with background colour, font colour and font */
+body {
+  font-family: 'Source Serif Pro', serif;
+  background-color: #6745B1;
+  color: white;
+}
+
+
+/* All of the below styles are used in the title bar which is used in every page*/
+
+/* styles all the links so they are invisible so they suit the menu better*/
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+
+/* Styles the menu button */
+#menu {
+  max-width: 110px;
+}
+
+#menu-icon {
+  width: 3em;
+}
+
+/* Styles the title bar including placement, background and font size and colour */
+.top-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  color: white;
+  font-size: 140%;
+  max-width: 100%;
+}
+
+.top-title {
+  background-image: linear-gradient(to right, #480C78, #1D1444, #000000);
+  border-radius: 15px;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin: 0 auto;
+  /* Center horizontally */
+  align-self: center;
+  display: flex;
+  /* Use flexbox */
+  justify-content: center;
+  /* Align items horizontally to center */
+}
+
+/* All the below styles are used in the main and temp pages */
+/* They use a lot of the same styles such as the grid to maintain consistency */
+/* Styles for the head div on the main page and temp page including borders, background colours, font sizes and placing them */
+.head {
+  grid-area: today;
+  border-radius: 25px;
+  background-image: linear-gradient(to right,
+      #480C78, #1D1444, #000000);
+  margin-right: 10%;
+  color: white;
+  padding-left: 1em;
+}
+
+/* Makes sure the size of the main image on the main page and temp page is correct*/
+#image {
+  width:9em;
+}
+
+/* Styles the size of the location icon on the temp and main pages  */
+#location-icon {
+  width: 1.5em;
+}
+
+.head h1 {
+  font-size: 1.8em;
+}
+
+#head-more h1,
+#head-more p {
+  font-size: 1.4em;
+}
+
+#head-loc {
+  display: flex;
+  align-items: center;
+}
+
+#head-loc :last-child {
+  margin-left: 2%;
+}
+
+#head-more {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+
+#head-more-image {
+  margin-left: 10%;
+  margin-bottom: 2%;
+}
+
+.today-position{
+  display: flex;
+  gap: 10em;
+}
+
+/* Places the text to speech button  */
+#speech-button{
+  margin-top:7em
+}
+
+/* Styles for the temp forecast and four day forecast div on the main page and temp page including borders, background colours, font sizes and placing them */
+.temp {
+  grid-area: temp;
+  border-radius: 25px;
+  background-image: linear-gradient(to right,
+      #480C78, #1D1444, #000000);
+  color: white;
+}
+
+/* These styles are used specifically in the four day forecast to size and position it  */
+#four-day-item {
+  display: flex;
+  align-items: center;
+  padding: 0.7em;
+  padding-left: 2em;
+}
+
+#four-day-item h3 {
+  font-size: 1.4em;
+}
+
+#four-day-item p {
+  font-size: 1.4em;
+}
+
+#four-day-item>* {
+  padding-right: 1em;
+}
+
+#four-day-item img {
+  max-width: 3em;
+}
+
+/* These styles are used specifically to style the temp forecast size and  position it*/
+#temp-item {
+  display: flex;
+}
+
+#temp-item> :first-child {
+  padding-left: 2%;
+  margin-right: 10%;
+}
+
+#temp-item p, #temp-item h1{
+  font-size: 1.5em;
+}
+
+/* Places the text to speech button  */
+#button-speech-day{
+  padding-left:25em;
+}
+
+
+/* Styles the div that contain all the hourly divs, this includes placement using flex box and background colours  */
+.hour {
+  grid-area: hour;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+
+}
+
+/* Styles the seperate divs that display the hourly information including background colour, placing and image size */
+.hourDiv {
+  background-image: linear-gradient(#40044F, #08010A, #060107, #000000);
+  border-radius: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: 0.2em;
+  padding-left: 0.2em;
+  width: 3.5em;
+
+}
+
+#hour-item p {
+  font-size: 1em;
+}
+
+#hour-item img {
+  max-width: 2em;
+}
+
+/* These styles are used to place the tags for the main and temp pages using a grid */
+
+#main-page,
+#temp-page {
+  display: grid;
+  grid-template-areas:
+    'today temp'
+    'hour temp';
+
+  grid-template-columns: 40em 30em;
+  grid-template-rows: 16em 12em;
+  margin-left: 3em;
+
+}
+
+
+
+/* These styles are used to style the map pages including placement, size and background colours */
+
+#map {
+  grid-area: map;
+  padding-left: 2em;
+}
+
+/* These styles are used to place the tags for the map pages using a grid */
+#map-page {
+  display: grid;
+  grid-template-areas:
+    'location map';
+  grid-template-columns: 25em 45em;
+  grid-template-rows: 25em;
+}
+
+/* These styles are used to place speech button in the map page */
+#button-speech-map{
+  padding-left: 11em;
+}
+
+
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.forecast-box {
+  background: linear-gradient(180deg,
+      #40044f 0%,
+      #08010a 91%,
+      #08010a 91%,
+      #060107 94%,
+      black 100%);
+  border-radius: 25px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.forecast-box p {
+  margin: 5px 0;
+  color: white
+}
+
+.forecast-box img {
+  width: 50px;
+  height: 50px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* These styles are used to style the map itself */
+.map-container {
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+/* These styles are used to style the location box used to display the information for the map */
+#locations-text li {
+  cursor: pointer;
+  text-align: center;
+  line-height: 2;
+}
+
+#locations-text ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#locations-text p {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+#locations-text {
+  border-radius: 25px;
+  background-image: linear-gradient(to right,
+      #480C78, #1D1444, #000000);
+  margin-right: 10%;
+  color: white;
+  grid-area: location;
+  padding: 1em;
+  margin-left: 5em;
+  min-height: fit-content;
+  max-height: fit-content;
+}
+
+
+/* These styles are used to style the setting page icnluding buttons */
+
+#settings-page {
+  margin-left: 1%;
+}
+
+#font-btns {
+  display: flex;
+  gap: 1%;
+}
+
+/* These styles are used to make the app responsive the ones below are meant for a phone screen */
+
+@media screen and (max-width: 600px) {
+
+  /* The styles for the main and temp pages to make sure they are responsive such as placement and sizing */
+  /* These styles are used to place the tags for the main and temp pages using a grid */
+  #main-page,
+  #temp-page {
+    display: grid;
+    grid-template-areas:
+      'today'
+      'temp'
+      'hour';
+    grid-template-columns: 25em;
+    grid-template-rows: 19em 18em 12em;
+    
+
+  }
+
+  /* These styles are used for the head div */
+  .today-position{
+    display: flex;
+    gap: 4em;
+  }
+
+  #speech-button{
+    margin-top:10em
+  }
+
+
+  /* These styles are used for the temp forecast and four day forecast */
+  .temp {
+    margin-top: 2em;
+    margin-right: 10%;
+  }
+
+  #temp-item {
+    display: flex;
+  }
+
+  #temp-item h1,  #temp-item p {
+    margin-left: 1em;
+    font-size: 0.8em;
+  }
+
+  #four-day-item {
+    padding: 0.25em;
+    padding-right: 2.5em;
+    padding-left: 2em;
+
+  }
+
+  #four-day-item h3 {
+    font-size: 1.15em;
+  }
+
+  #four-day-item p {
+    font-size: 1.15em;
+  }
+
+  #four-day-item>* {
+    padding-right: 1em;
+  }
+
+  #four-day-item img {
+    max-width: 2.4em;
+  }
+
+  /* These styles are used to style the hour div that show the hourly forecast the include sizing */
+  .hourDiv {
+    background-image: linear-gradient(#40044F, #08010A, #060107, #000000);
+    border-radius: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  #hour-item p {
+    font-size: 1em;
+  }
+
+  #hour-item img {
+    max-width: 2em;
+  }
+
+  .hour {
+    gap: 0.5em;
+  }
+
+  #button-speech-day{
+    padding-left: 17em;
+  }
+
+  
+/* These styles are used to style the map page to make it responsive */
+  #map-page {
+    display: grid;
+    grid-template-areas: 'map' 'location';
+    padding-left: 3em;
+
+  }
+
+  #map {
+
+    margin: 2em;
+  }
+
+  #locations-text {
+    padding: 3em;
+    margin-left: 0;
+
+  }
+
+  #button-speech-map{
+    padding-left: 13em;
+  }
+
+
+}
+
+/* These styles are used to make it responsive for larger screens so that the styles grow to fit */
+
+@media screen and (min-width: 1800px) {
+
+  /* These styles are used to style the main and temp page */
+  #main-page,
+  #temp-page {
+    grid-template-columns: 50em;
+    grid-template-rows: 25em 24em 10em;
+    padding-left: 5em;
+
+  }
+
+  /* The styles below are to style the head div in the main and temp pages including font size and placement */
+  #head-more h1,
+  #head-more p {
+    font-size: 3em;
+  }
+
+  .today-position{
+    display: flex;
+    gap: 16em;
+  }
+  
+  #speech-button{
+    margin-top:15em
+  }
+
+  /* These styles are used to style the temp forecast div including sizing and positions */
+  .temp {
+    margin-top: 0.5em;
+    margin-right: 10%;
+  }
+
+  #temp-item {
+    display: flex;
+  }
+
+  #temp-item h1, #temp-item p {
+    margin-left: 1em;
+    font-size: 2.6em;
+  }
+
+   /* These styles are used to style the four day forecast div including sizing and positions */
+  #four-day-item {
+    padding: 0.25em;
+    padding-right: 2.5em;
+    padding-left: 4em;
+
+  }
+
+  #four-day-item h3,   #four-day-item p{
+    font-size: 3.2em;
+  }
+
+  #four-day-item>* {
+    padding-right: 1em;
+  }
+
+  #four-day-item img {
+    max-width: 4em;
+  }
+
+  #button-speech-day{
+    padding-left: 45em;
+  }
+
+   /* These styles are used to style the hourly forecast div including sizing and positions */
+  .hourDiv {
+    background-image: linear-gradient(#40044F, #08010A, #060107, #000000);
+    border-radius: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    padding-left: 0.7em;
+    width:4em;
+  }
+
+  #hour-item p {
+    font-size: 1.6em;
+  }
+
+  #hour-item img {
+    max-width: 4em;
+  }
+
+  .hour {
+    gap: 1em;
+  }
+
+  /* These styles are used to style the map page including sizing and positions */ 
+  #map-page {
+    display: grid;
+    grid-template-areas:
+      'location map';
+    grid-template-columns: 34em 64em;
+    grid-template-rows: 45em;
+  }
+
+   /* These styles are used to style the map div including sizing and positions */
+  #map {
+
+    margin: 2em;
+    min-height: 5em;
+  }
+
+   /* These styles are used to style the locations-text div including sizing and positions */
+  #locations-text {
+    padding: 3em;
+    margin-left: 5em;
+  }
+
+  #locations-text p {
+    font-size: 3em;
+  }
+  #locations-text ul {
+    font-size: 1.5em;
+  }
+
+
+}
+
